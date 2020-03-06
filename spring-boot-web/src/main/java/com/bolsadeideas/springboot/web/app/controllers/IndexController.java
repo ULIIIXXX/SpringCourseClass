@@ -1,0 +1,15 @@
+package com.bolsadeideas.springboot.web.app.controllers;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+/* una clase controller siempre se debe llamar exampleController, siempre con la anotaciòn controller*/
+public class IndexController {
+	@RequestMapping(value="/index",method= RequestMethod.GET)  //  por defecto es un metodo  get
+	//@GetMapping(value="/index")  // es otra forma de llamar a un recurso para mapearlo
+	//@GetMapping({"/index", "/", "/home"}) para mandar llamar varias vistas en un metodo
+	public String index() {
+		
+		return "index";
+	}
+}
