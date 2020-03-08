@@ -1,0 +1,5 @@
+package com.bolsadeideas.apringboot.web.app.controllers;
+
+public class IndexController {
+
+}

@@ -1,0 +1,14 @@
+package com.bolsadeideas.apringboot.web.app.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller //toda clase controladora se denota por la palabra controller
+public class IndexController {
+	@GetMapping({"/index","/","/home"})
+	public String index(Model model) { //Model pasa datos a la vista
+		model.addAttribute("titulo", "Hola spring framework");
+		return "index";
+	}
+}
