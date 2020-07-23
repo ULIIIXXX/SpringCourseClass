@@ -1,8 +1,15 @@
 package com.bolsadeideas.springboot.app.jpa.models.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Date;
+
 
 @Entity
 @Table(name = "clientes")
@@ -11,13 +18,25 @@ public class Cliente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    //@Size(min=4,max=12)  Para un tamanio deifnido de carateres
+    @NotEmpty                      //estas anotaciones requieren de una dependencia  spring-boot-starter-validation
     private String nombre;
+    @NotEmpty
     private String apellido;
+    @NotEmpty
+    @Email                    //solo se usa con cadenas Strings
     private String email;
 
+    @NotNull                   //para los demas tipos de datos
     @Column(name = "created_at") //Para que la columna s ellame diferente a nuestra declaracion en java
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createdAt;
+
+    /*@PrePersist
+    private void prePersist(){
+        createdAt = new Date();     //solo s eusa en caso de querer agreagr valores sin especificalros en el fromulario
+    }*/
 
     public Long getId() {
         return id;

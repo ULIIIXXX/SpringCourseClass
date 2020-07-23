@@ -1,2 +1,2 @@
-INSERT INTO clientes (id,nombre,apellido,email,createdAt) VALUES (1,'Ulises','Contreras','ulises.contreras@tesseract.mx',now());
-INSERT INTO clientes (id,nombre,apellido,email,createdAt) VALUES (2,'Claudia','Alejandro','claudia.alejandro@tesseract.mx','2019-10-14');
+INSERT INTO clientes (id,nombre,apellido,email,created_at) VALUES (1,'Ulises','Contreras','ulises.contreras@tesseract.mx',now());
+INSERT INTO clientes (id,nombre,apellido,email,created_at) VALUES (2,'Claudia','Alejandro','claudia.alejandro@tesseract.mx','2019-10-14');
