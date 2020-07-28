@@ -32,7 +32,14 @@ public class ClienteDaoImpl implements ICliente{
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Cliente findOne(Long id) {
         return entityManager.find(Cliente.class, id);   //Se necesita buscar un elemento de tipo Cliente mediante el id proveido
+    }
+
+    @Override
+    @Transactional
+    public void deleteItem(Long id) {
+        entityManager.remove(findOne(id));
     }
 }

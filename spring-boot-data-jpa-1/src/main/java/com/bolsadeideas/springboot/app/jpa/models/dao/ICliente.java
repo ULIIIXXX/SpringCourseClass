@@ -12,4 +12,6 @@ public interface ICliente {
 
     public Cliente findOne(Long id);
 
+    public void  deleteItem(Long id);
+
 }
